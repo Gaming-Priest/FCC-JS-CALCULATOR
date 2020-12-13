@@ -15,6 +15,11 @@ const config = {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /node_modules/,
       }
     ]
   },
@@ -23,19 +28,19 @@ const config = {
       '.js',
       '.jsx'
     ],
-    modules:[
+    modules: [
       'node_modules',
       path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
     ]
   },
   resolveLoader: {
-    modules:[
+    modules: [
       'node_modules',
       path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
     ]
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: path.join(__dirname, 'dist')
   }
 };
 
