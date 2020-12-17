@@ -48,7 +48,6 @@ export default function App() {
     let operator = e.target.value
     setCurrOp(operator)
     setLastOp(currOp)
-  
   if(answer !== ''){
    if (logic !== '') {
         setLogic(logic + operator)
@@ -91,7 +90,7 @@ export default function App() {
           setLogic(answer)
         }
       } else {
-        setLogic(logic + '=' + resolved)
+        setLogic(logic + '=' )
         setPrevAnswer(resolved)
         setAnswer(resolved)
       }
